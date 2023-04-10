@@ -611,6 +611,7 @@ fileprivate extension ProgressWebViewController {
         }
         else if let navigationBar = currentNavigationController?.navigationBar, !progressView.isDescendant(of: navigationBar) {
             navigationBar.addSubview(progressView)
+            updateProgressViewFrame()
         }
     }
     
