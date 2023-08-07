@@ -81,6 +81,12 @@ open class ProgressWebViewController: UIViewController {
         }
     }
     
+    open var enableSwipeBack = true {
+        didSet {
+            webView?.allowsBackForwardNavigationGestures = enableSwipeBack
+        }
+    }
+    
     open var currentURL: URL? {
         return webView?.url
     }
