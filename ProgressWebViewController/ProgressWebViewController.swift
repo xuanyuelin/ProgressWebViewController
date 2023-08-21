@@ -881,6 +881,11 @@ extension ProgressWebViewController: WKNavigationDelegate {
             isReloadWhenAppear = true
         }
     }
+    
+    @available(iOS 15.0, *)
+    public func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping (WKPermissionDecision) -> Void) {
+        decisionHandler(.grant)
+    }
 }
 
 extension ProgressWebViewController: UIScrollViewDelegate {
